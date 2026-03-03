@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.sample.demo3.LoginController"
+            prefWidth="1620" prefHeight="800">
+
+    <children>
+        <!-- Background Image - Full screen -->
+        <ImageView fx:id="backgroundImageView" fitHeight="800" fitWidth="1620"
+                   preserveRatio="false" pickOnBounds="true">
+        </ImageView>
+
+        <!-- Header Bar -->
+        <Rectangle height="70" width="1620" fill="WHITE"
+                   opacity="0.98"/>
+
+        <!-- Logo -->
+        <ImageView fx:id="logoImageView" fitHeight="67" layoutX="30" layoutY="0"
+                   preserveRatio="true">
+        </ImageView>
+
+        <!-- Login Box -->
+        <VBox layoutX="600" layoutY="150"
+              spacing="20"
+              style="-fx-background-color: rgba(255,255,255,0.98); -fx-background-radius: 15; -fx-padding: 40; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);"
+              prefWidth="350" prefHeight="400"
+              alignment="CENTER">
+
+            <Text text="Login"
+                  style="-fx-fill: #5a9115; -fx-font-weight: bold;">
+                <font>
+                    <Font size="26"/>
+                </font>
+            </Text>
+
+            <Text text="ECO MOBILITY SYSTEMS"
+                  style="-fx-fill: #666666; -fx-font-style: italic;">
+                <font>
+                    <Font size="13"/>
+                </font>
+            </Text>
+
+            <!-- Spacer -->
+            <Region prefHeight="20"/>
+
+            <!-- Username Field -->
+            <VBox spacing="8" prefWidth="280">
+                <Label text="Username"
+                       style="-fx-text-fill: #333333; -fx-font-weight: bold;"/>
+                <TextField fx:id="usernameField"
+                           promptText="Enter your username"
+                           prefHeight="45"
+                           prefWidth="280"
+                           style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-font-size: 14; -fx-padding: 10;"/>
+            </VBox>
+
+            <!-- Password Field -->
+            <VBox spacing="8" prefWidth="280">
+                <Label text="Password"
+                       style="-fx-text-fill: #333333; -fx-font-weight: bold;"/>
+                <PasswordField fx:id="passwordField"
+                               promptText="Enter your password"
+                               prefHeight="45"
+                               prefWidth="280"
+                               style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-font-size: 14; -fx-padding: 10;"/>
+            </VBox>
+
+            <!-- Error Label -->
+            <Label fx:id="errorLabel"
+                   text="Mode on ligne - Serveur accessible"
+                   style="-fx-text-fill: orange; -fx-font-weight: bold; -fx-font-size: 12;"
+                   visible="true"
+                   wrapText="true"
+                   maxWidth="280"
+                   alignment="CENTER"/>
+
+            <!-- Spacer -->
+            <Region prefHeight="15"/>
+
+            <!-- Login Button -->
+            <Button fx:id="loginButton"
+                    text="SE CONNECTER"
+                    prefWidth="280"
+                    prefHeight="50"
+                    style="-fx-background-color: #5A9115; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16; -fx-background-radius: 8; -fx-cursor: hand;"
+                    onAction="#handleLogin"/>
+
+            <HBox alignment="CENTER" prefWidth="280">
+                <Hyperlink fx:id="forgotPasswordLink" text="Forgot Password?"
+                           style="-fx-text-fill: #5A9115; -fx-font-size: 12;"
+                           onAction="#handleForgotPassword"/>
+            </HBox>
+
+        </VBox>
+
+    </children>
+</AnchorPane>
